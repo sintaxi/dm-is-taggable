@@ -28,7 +28,7 @@ module DataMapper
         
         taggers_associations = ""
         options[:by].each do |tagger_class|
-          taggers_associations << "belongs_to :#{Extlib::Inflection.underscore(tagger_class.to_s)}\n"
+          taggers_associations << "belongs_to :#{Extlib::Inflection.underscore(tagger_class.to_s)}, :nullable => true\n"
         end
         
         class_eval <<-RUBY
